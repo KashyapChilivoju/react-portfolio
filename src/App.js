@@ -3,6 +3,7 @@ import './App.css';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Experience from './components/Experience';
+import Links from './components/Links';
 import Footer from './components/Footer';
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <Welcome/>
     <About/>
     <Experience/>
-    <Footer></Footer>
+    <Links/>
+    <Footer/>
     </div>
   );
 }
