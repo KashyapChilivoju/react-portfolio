@@ -1,65 +1,118 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const styles = {
     container: {
         height: '100vh',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        color: '#fff',
-        fontSize: '20px',
-        padding: '20px',
+        background: 'radial-gradient(circle, #e8f0f2, #d1e7ec, #a8d5e2, #85c3da)',
+        fontFamily: "'Poppins', sans-serif",
         textAlign: 'center',
-        transition: 'opacity 0.5s ease-out',
-        opacity: 0.1,
-        margin: 'auto',
         overflow: 'hidden',
-        background: 'linear-gradient(-45deg, #ff6f61, #ffb400, #4ecdc4, #1a535c)',
-        backgroundSize: '400% 400%',
-        animation: 'gradientBG 15s ease infinite',
-        textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
+        padding: '20px',
+    },
+    card: {
+        background: '#ffffff',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+        borderRadius: '15px',
+        padding: '30px',
+        maxWidth: '60%',
+        transition: 'transform 1s ease, opacity 1s ease',
+        opacity: 0,
+        transform: 'translateY(30px)',
     },
     image: {
-        maxWidth: '200px',
+        width: '150px',
+        height: '150px',
         borderRadius: '50%',
-        marginBottom: '20px',
-        transition: 'opacity 0.5s ease-in-out',
+        margin: '20px auto',
+        border: '5px solid #3498db',
+        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
+        transition: 'transform 1s ease, opacity 1s ease',
         opacity: 0,
-        border: '3px solid #fff',
-        boxShadow: '0 2px 6px rgba(0,0,0,0.3)'
+        transform: 'scale(0.9)',
+    },
+    title: {
+        fontSize: '32px',
+        color: '#3498db',
+        marginBottom: '15px',
+        fontWeight: 'bold',
+    },
+    subtitle: {
+        fontSize: '24px',
+        color: '#555',
+        marginBottom: '20px',
     },
     textBlock: {
-        margin: '10px 0',
-        fontSize: '32px',
-        padding: '10px',
-        borderRadius: '5px'
+        fontSize: '16px',
+        color: '#555',
+        lineHeight: '1.6',
     },
-    keyframes: `@keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }`
+    keyframes: `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `,
 };
 
-
 function About() {
+    const [animationTrigger, setAnimationTrigger] = useState(false);
     const { ref, inView } = useInView({
-        triggerOnce: false,
-        threshold: 0.1,
+        triggerOnce: false, // Allow the animation to re-trigger
+        threshold: 0.2,
+        onChange: (isInView) => {
+            if (isInView) {
+                setAnimationTrigger(true); // Start animation
+            } else {
+                setAnimationTrigger(false); // Reset animation
+            }
+        },
     });
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={styles.container}>
             <style>{styles.keyframes}</style>
-            <div style={{ ...styles.container, opacity: inView ? 1 : 0.1 }} ref={ref}>
-                <img src="/Profile.jpeg" alt="Kashyap Chilivoju"
-                    style={{ ...styles.image, opacity: inView ? 1 : 0 }} />
-                <h1>About Me</h1>
+            <div
+                style={{
+                    ...styles.card,
+                    opacity: animationTrigger ? 1 : 0,
+                    transform: animationTrigger ? 'translateY(0)' : 'translateY(30px)',
+                }}
+                ref={ref}
+            >
+                <img
+                    src="/Profile.jpeg"
+                    alt="Kashyap Chilivoju"
+                    style={{
+                        ...styles.image,
+                        opacity: animationTrigger ? 1 : 0,
+                        transform: animationTrigger ? 'scale(1)' : 'scale(0.9)',
+                    }}
+                />
+                <h1 style={styles.title}>About Me</h1>
+                <h3 style={styles.subtitle}>
+                    Aspiring Software Engineer | Full-Stack Developer
+                </h3>
                 <div style={styles.textBlock}>
-                    <p>I am a software engineer with a passion for building beautiful and functional web applications.</p>
-                    <p>Aspiring software engineer with expertise in Full-Stack Development. My academic journey began with challenges; however, these experiences have since fueled my determination and significantly honed my problem-solving skills and technical expertise. I am excited to demonstrate and showcase my prowess in the Software Engineering Industry.</p>
+                    <p>
+                        I'm a software engineer with a passion for crafting innovative and functional
+                        web applications. My journey in software engineering has been both challenging
+                        and rewarding, fueling my determination to excel in the industry.
+                    </p>
+                    <p>
+                        Through perseverance and continuous learning, I've honed my problem-solving
+                        skills and technical expertise. I'm excited to showcase my talents and
+                        contribute to impactful projects.
+                    </p>
                 </div>
             </div>
         </div>

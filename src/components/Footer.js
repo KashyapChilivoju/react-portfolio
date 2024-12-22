@@ -17,7 +17,8 @@ const styles = {
 };
 
 function Footer() {
-    const lastUpdated = '21/12/2024';
+    const date = new Date();
+    const lastUpdated = date.toLocaleDateString();
 
     return (
         <footer style={styles.footer}>
