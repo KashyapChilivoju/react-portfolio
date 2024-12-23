@@ -46,7 +46,7 @@ const styles = {
         marginBottom: '20px',
     },
     textBlock: {
-        fontSize: '16px',
+        fontSize: '20px',
         color: '#555',
         lineHeight: '1.6',
     },
