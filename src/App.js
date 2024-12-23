@@ -1,21 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import Welcome from './components/Welcome';
+import WelcomePage from './components/Welcome';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Links from './components/Links';
 import Footer from './components/Footer';
+import StarEffect from './components/StarEffect';
 
 function App() {
   return (
-    <div className="App">
-    <Welcome/>
-    <About/>
-    <Experience/>
-    <Projects/>
-    <Links/>
-    <Footer/>
+    <div className="App" style={{ position: 'relative' }}>
+      <StarEffect />
+      <WelcomePage />
+      <About />
+      <Experience />
+      <Projects />
+      <Links />
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const styles = {
@@ -11,11 +11,6 @@ const styles = {
         overflow: 'hidden',
         position: 'relative',
         transition: 'opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 2s cubic-bezier(0.4, 0, 0.2, 1)',
-    },
-    canvas: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
     },
     gradientBackground: {
         position: 'absolute',
@@ -51,70 +46,7 @@ const styles = {
     },
 };
 
-function GlitterEffect() {
-    const canvasRef = useRef(null);
-    const textRef = useRef(null);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-
-        const createParticle = (x, y) => {
-            particles.push({
-                x,
-                y,
-                size: Math.random() * 5 + 1,
-                opacity: 1,
-                velocityX: (Math.random() - 0.5) * 2,
-                velocityY: (Math.random() - 0.5) * 2,
-                fade: Math.random() * 0.05 + 0.01,
-            });
-        };
-
-        const drawParticles = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((particle, i) => {
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(228, 182, 0, ${particle.opacity})`;
-                ctx.fill();
-
-                particle.x += particle.velocityX;
-                particle.y += particle.velocityY;
-                particle.opacity -= particle.fade;
-
-                if (particle.opacity <= 0) {
-                    particles.splice(i, 1);
-                }
-            });
-        };
-
-        const animate = () => {
-            drawParticles();
-            requestAnimationFrame(animate);
-        };
-
-        const handleMouseMove = (e) => {
-            for (let i = 0; i < 5; i++) {
-                createParticle(e.clientX, e.clientY);
-            }
-            if (textRef.current) {
-                textRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            }
-        };
-
-        canvas.addEventListener('mousemove', handleMouseMove);
-        animate();
-
-        return () => {
-            canvas.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
+function WelcomePage() {
     const { ref, inView } = useInView({
         triggerOnce: false,
         threshold: 0.2,
@@ -131,12 +63,10 @@ function GlitterEffect() {
         >
             <style>{styles.keyframes}</style>
             <div style={styles.gradientBackground}></div>
-            <canvas ref={canvasRef} style={styles.canvas}></canvas>
-            <h1 ref={textRef} style={styles.text}>
-                Welcome to Kashyap Chilivoju's Portfolio
-            </h1>
+
+            <h1 style={styles.text}>Welcome to Kashyap Chilivoju's Portfolio</h1>
         </div>
     );
 }
 
-export default GlitterEffect;
+export default WelcomePage;

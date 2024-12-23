@@ -56,6 +56,7 @@ const styles = {
         textAlign: 'left',
         whiteSpace: 'pre-wrap',
         overflow: 'hidden',
+        textAlign: 'center',
     },
     mediaQueries: `
         @media (max-width: 768px) {
@@ -120,8 +121,8 @@ function About() {
         "I'm a software engineer with a passion for crafting innovative and functional web applications. My journey in software engineering has been both challenging and rewarding, fueling my determination to excel in the industry.\n\nThrough perseverance and continuous learning, I've honed my problem-solving skills and technical expertise. I'm excited to showcase my talents and contribute to impactful projects.";
 
     const renderedTitle = useTypewriterEffect(titleText, inView, 80);
-    const renderedSubtitle = useTypewriterEffect(subtitleText, inView, 80);
-    const renderedDescription = useTypewriterEffect(descriptionText, inView, 25);
+    const renderedSubtitle = useTypewriterEffect(subtitleText, inView, 60);
+    const renderedDescription = useTypewriterEffect(descriptionText, inView, 18);
 
     return (
         <div style={styles.container}>
@@ -148,6 +149,7 @@ function About() {
                 <h1 style={styles.title}>{renderedTitle}</h1>
                 <h3 style={styles.subtitle}>{renderedSubtitle}</h3>
                 <div style={styles.textBlock}>{renderedDescription}</div>
+                
             </div>
         </div>
     );

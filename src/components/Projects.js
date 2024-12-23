@@ -2,7 +2,7 @@ import React from 'react';
 
 const styles = {
     container: {
-        height: 'auto', // Adjusted for content
+        height: 'auto',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -10,7 +10,7 @@ const styles = {
         backgroundColor: '#222',
         color: 'white',
         fontSize: '16px',
-        padding: '40px 20px', // Increased padding for better spacing
+        padding: '40px 20px',
         position: 'relative',
         overflow: 'hidden',
     },
@@ -18,12 +18,12 @@ const styles = {
         margin: '20px 0',
         padding: '20px',
         borderRadius: '8px',
-        backgroundColor: '#333', // Slightly lighter background for each item
-        width: '80%', // Limit width for better readability
-        boxShadow: '0 4px 8px rgba(0,0,0,0.2)', // Subtle shadow for 3D effect
+        backgroundColor: '#333',
+        width: '80%',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
     },
     projectLink: {
-        color: '#4CAF50', // Green color for links
+        color: '#4CAF50',
         textDecoration: 'none',
         fontSize: '20px',
         fontWeight: 'bold',
@@ -31,12 +31,12 @@ const styles = {
     projectDescription: {
         marginTop: '10px',
         fontSize: '14px',
-        lineHeight: '1.6', // Improved line spacing for readability
+        lineHeight: '1.6',
     },
     technologyList: {
         marginTop: '5px',
         fontSize: '14px',
-        fontStyle: 'italic', // Style for technology listing
+        fontStyle: 'italic',
     },
 };
 
