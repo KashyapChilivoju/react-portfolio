@@ -17,9 +17,10 @@ const styles = {
         background: '#ffffff',
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
         borderRadius: '15px',
-        maxWidth: '70%',
+        maxWidth: '85%',
         width: '100%',
         height: 'fit-content',
+        minHeight: '520px',
         transition: 'opacity 1s ease, transform 1s ease',
         opacity: 0,
         transform: 'translateY(30px)',
@@ -109,8 +110,8 @@ function About() {
     const titleText = 'Kashyap Chilivoju';
     const subtitleText = 'Software Engineering Student | Full-Stack Developer';
     const descriptionParagraphs = [
-        "I'm a software engineer with a passion for crafting innovative and functional web applications. My journey in software engineering has been both challenging and rewarding, fueling my determination to excel in the industry.",
-        "Through perseverance and continuous learning, I've honed my problem-solving skills and technical expertise. I'm excited to showcase my talents and contribute to impactful projects.",
+        "I'm a software engineer with a passion for making cool, creative, interactive, and functional web applications. I enjoy solving problems, tackling challenges and exploring new technologies to develop effective solutions. Through perseverance and continuous learning, I've honed my problem-solving skills and technical expertise, I'm excited to showcase my talents and contribute to impactful projects.",
+        "This website is themed 'The Programmer's Life'. The Welcome page, with its breathing/heart-beating effect, symbolizes the countless hours spent staring at a computer screen, reflecting and thinking. The About page features a typewriter/coding effect to represent the focused moments of coding and debugging. Finally, the starry effect signifies the 'magic' that happens when the code successfully compiles after hours of effort.",
     ];
 
     const renderedTitle = useTypewriterEffect(titleText, inView, 80);

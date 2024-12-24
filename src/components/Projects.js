@@ -15,18 +15,28 @@ const styles = {
         overflow: 'hidden',
     },
     projectItem: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
         margin: '20px 0',
         padding: '20px',
         borderRadius: '8px',
         backgroundColor: '#333',
         width: '80%',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+        textDecoration: 'none', // Ensure text inside remains styled
+        color: 'white', // Ensure text color stays consistent
     },
-    projectLink: {
-        color: '#4CAF50',
-        textDecoration: 'none',
-        fontSize: '20px',
-        fontWeight: 'bold',
+    projectImage: {
+        width: '150px',
+        height: '150px',
+        marginRight: '20px',
+        borderRadius: '8px',
+        objectFit: 'cover',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    },
+    projectDetails: {
+        flex: '1',
     },
     projectDescription: {
         marginTop: '10px',
@@ -44,39 +54,69 @@ function Projects() {
     return (
         <div style={styles.container}>
             <h1>Projects</h1>
-            <div style={styles.projectItem}>
-                <a href="https://github.com/KashyapChilivoju/react-portfolio" style={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                    React Portfolio
-                </a>
-                <p style={styles.projectDescription}>
-                    This websites code - A personal portfolio website to showcase my software development projects and skills. Features a responsive design and interactive elements to engage visitors.
-                </p>
-                <p style={styles.technologyList}>
-                    Technologies Used: React, HTML, CSS and JavaScript
-                </p>
-            </div>
-            <div style={styles.projectItem}>
-                <a href="https://github.com/KashyapChilivoju/GearSync" style={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                    GearSync
-                </a>
-                <p style={styles.projectDescription}>
-                    An application designed for car dealerships to manage, maintain and add to dealer stock.
-                </p>
-                <p style={styles.technologyList}>
-                    Technologies Used: C#, .NET Core, Javascript, Svelte, JWT, ASP.NET, SQLite, Dapper and Fast-Endpoints
-                </p>
-            </div>
-            <div style={styles.projectItem}>
-                <a href="https://github.com/KashyapChilivoju/RegisterLoginPHP" style={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                    Register & Login PHP
-                </a>
-                <p style={styles.projectDescription}>
-                    A secure user authentication system for web applications, featuring registration, login, and password management functionalities.
-                </p>
-                <p style={styles.technologyList}>
-                    Technologies Used: PHP, HTML, CSS
-                </p>
-            </div>
+            <a
+                href="https://github.com/KashyapChilivoju/react-portfolio"
+                style={styles.projectItem}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img 
+                    src="/ReactPortfolio.png" 
+                    alt="React Portfolio" 
+                    style={styles.projectImage} 
+                />
+                <div style={styles.projectDetails}>
+                    <h2>React Portfolio</h2>
+                    <p style={styles.projectDescription}>
+                        This website's code - A responsive and interactive personal portfolio website to showcase my software development projects and skills.
+                    </p>
+                    <p style={styles.technologyList}>
+                        Technologies Used: React, Node.js, HTML, CSS, and JavaScript
+                    </p>
+                </div>
+            </a>
+            <a
+                href="https://github.com/KashyapChilivoju/GearSync"
+                style={styles.projectItem}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img 
+                    src="/GearSync.png" 
+                    alt="GearSync" 
+                    style={styles.projectImage} 
+                />
+                <div style={styles.projectDetails}>
+                    <h2>GearSync</h2>
+                    <p style={styles.projectDescription}>
+                        An application designed for car dealerships to manage, maintain, and add to dealer stock.
+                    </p>
+                    <p style={styles.technologyList}>
+                        Technologies Used: C#, .NET Core, JavaScript, Svelte, JWT, ASP.NET, SQLite, Dapper, and Fast-Endpoints
+                    </p>
+                </div>
+            </a>
+            <a
+                href="https://github.com/KashyapChilivoju/RegisterLoginPHP"
+                style={styles.projectItem}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img 
+                    src="/RegisterLoginPHP.png" 
+                    alt="Register & Login PHP" 
+                    style={styles.projectImage} 
+                />
+                <div style={styles.projectDetails}>
+                    <h2>Register & Login PHP</h2>
+                    <p style={styles.projectDescription}>
+                        A secure user authentication system for web applications, featuring registration, login, and password management functionalities.
+                    </p>
+                    <p style={styles.technologyList}>
+                        Technologies Used: PHP, HTML, CSS
+                    </p>
+                </div>
+            </a>
             <p style={styles.projectDescription}>More projects coming soon!</p>
         </div>
     );
