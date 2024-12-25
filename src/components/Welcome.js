@@ -18,9 +18,9 @@ const styles = {
         left: 0,
         width: '100%',
         height: '100%',
-        background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+        background: 'linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
         backgroundSize: '400% 400%',
-        animation: 'gradientBG 7s ease infinite',
+        animation: 'gradientBG 4s ease infinite',
         zIndex: -2,
     },
     keyframes: `
@@ -30,9 +30,9 @@ const styles = {
             100% { background-position: 0% 50%; }
         }
         @keyframes pulsate {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
+            0% { transform: scale(1.1); opacity: 1; }
+            50% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
         }
     `,
     text: {
@@ -41,7 +41,7 @@ const styles = {
         textAlign: 'center',
         fontSize: 'calc(42px + 3vmin)',
         position: 'absolute',
-        animation: 'pulsate 7s infinite',
+        animation: 'pulsate 4s infinite',
         pointerEvents: 'none',
     },
 };

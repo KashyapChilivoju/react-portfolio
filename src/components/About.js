@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 const styles = {
     container: {
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -37,7 +37,7 @@ const styles = {
         boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
         transition: 'transform 1s ease-in-out, opacity 1s ease',
         opacity: 0,
-        transform: 'scale(0.6)', // Transition from smaller scale
+        transform: 'scale(0.6)',
         marginBottom: '50px'
     },
     title: {
@@ -83,7 +83,7 @@ function useTypewriterEffect(text, inView, speed = 100) {
         let interval;
 
         if (inView) {
-            setDisplayedText(''); // Reset text when re-entering
+            setDisplayedText('');
             interval = setInterval(() => {
                 if (index < text.length - 1) {
                     index++;
@@ -93,7 +93,7 @@ function useTypewriterEffect(text, inView, speed = 100) {
                 }
             }, speed);
         } else {
-            setDisplayedText(''); // Clear text when out of view
+            setDisplayedText('');
         }
 
         return () => clearInterval(interval);
@@ -155,7 +155,7 @@ function About() {
                     style={{
                         ...styles.image,
                         opacity: inView ? 1 : 0,
-                        transform: inView ? 'scale(1.6)' : 'scale(0.6)', // Updated scale transition
+                        transform: inView ? 'scale(1.6)' : 'scale(0.6)',
                     }}
                 />
                 <h1 style={styles.title} className="responsive-title">
