@@ -110,8 +110,8 @@ function About() {
     const titleText = 'Kashyap Chilivoju';
     const subtitleText = 'Software Engineering Student | Full-Stack Developer';
     const descriptionParagraphs = [
-        "I'm a software engineer with a passion for making cool, creative, interactive, and functional web applications. I enjoy solving problems, tackling challenges and exploring new technologies to develop effective solutions. Through perseverance and continuous learning, I've honed my problem-solving skills and technical expertise, I'm excited to showcase my talents and contribute to impactful projects.",
-        "This website is themed 'The Programmer's Life'. The Welcome page, with its breathing/heart-beating effect, symbolizes the countless hours spent staring at a computer screen, reflecting and thinking. The About page features a typewriter/coding effect to represent the focused moments of coding and debugging. Finally, the starry effect signifies the 'magic' that happens when the code successfully compiles after hours of effort.",
+        "I'm a software engineer with a passion for making cool, creative, interactive, and functional web applications. I enjoy solving problems, tackling challenges, working in a collaborative environment, and exploring new technologies to develop effective solutions.",
+        "This website is themed 'The Programmer's Life'. The Welcome page, with its breathing/heart-beating effect, symbolizes the countless hours spent staring at a computer screen, reflecting and thinking. The About page features a typewriter/coding effect to represent the focused moments of coding and debugging. The project mouse-over effect the feel of the keystroke. Finally, the starry mouse effect signifies the 'magic' that happens when the code successfully compiles after hours of effort.",
     ];
 
     const renderedTitle = useTypewriterEffect(titleText, inView, 80);

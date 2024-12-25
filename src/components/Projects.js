@@ -24,8 +24,14 @@ const styles = {
         backgroundColor: '#333',
         width: '80%',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-        textDecoration: 'none', // Ensure text inside remains styled
-        color: 'white', // Ensure text color stays consistent
+        textDecoration: 'none',
+        color: 'white',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease',
+    },
+    projectItemPress: {
+        transform: 'scale(0.97)',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
+        backgroundColor: '#444',
     },
     projectImage: {
         width: '150px',
@@ -34,6 +40,11 @@ const styles = {
         borderRadius: '8px',
         objectFit: 'cover',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    },
+    projectImagePress: {
+        transform: 'scale(0.95)',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.5)',
     },
     projectDetails: {
         flex: '1',
@@ -51,72 +62,72 @@ const styles = {
 };
 
 function Projects() {
+    const [hoveredIndex, setHoveredIndex] = React.useState(null);
+
+    const handleMouseEnter = (index) => setHoveredIndex(index);
+    const handleMouseLeave = () => setHoveredIndex(null);
+
+    const projects = [
+        {
+            title: 'React Portfolio',
+            image: '/ReactPortfolio.png',
+            description:
+                "This website's code - A responsive and interactive personal portfolio website to showcase my software development projects and skills.",
+            technologies: 'React, Node.js, HTML, CSS, and JavaScript',
+            link: 'https://github.com/KashyapChilivoju/react-portfolio',
+        },
+        {
+            title: 'GearSync',
+            image: '/GearSync.png',
+            description:
+                'An application designed for car dealerships to manage, maintain, and add to dealer stock.',
+            technologies:
+                'C#, .NET Core, JavaScript, Svelte, JWT, ASP.NET, SQLite, Dapper, and Fast-Endpoints',
+            link: 'https://github.com/KashyapChilivoju/GearSync',
+        },
+        {
+            title: 'Register & Login PHP',
+            image: '/RegisterLoginPHP.png',
+            description:
+                'A secure user authentication system for web applications, featuring registration, login, and password management functionalities.',
+            technologies: 'PHP, HTML, CSS',
+            link: 'https://github.com/KashyapChilivoju/RegisterLoginPHP',
+        },
+    ];
+
     return (
         <div style={styles.container}>
             <h1>Projects</h1>
-            <a
-                href="https://github.com/KashyapChilivoju/react-portfolio"
-                style={styles.projectItem}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img 
-                    src="/ReactPortfolio.png" 
-                    alt="React Portfolio" 
-                    style={styles.projectImage} 
-                />
-                <div style={styles.projectDetails}>
-                    <h2>React Portfolio</h2>
-                    <p style={styles.projectDescription}>
-                        This website's code - A responsive and interactive personal portfolio website to showcase my software development projects and skills.
-                    </p>
-                    <p style={styles.technologyList}>
-                        Technologies Used: React, Node.js, HTML, CSS, and JavaScript
-                    </p>
-                </div>
-            </a>
-            <a
-                href="https://github.com/KashyapChilivoju/GearSync"
-                style={styles.projectItem}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img 
-                    src="/GearSync.png" 
-                    alt="GearSync" 
-                    style={styles.projectImage} 
-                />
-                <div style={styles.projectDetails}>
-                    <h2>GearSync</h2>
-                    <p style={styles.projectDescription}>
-                        An application designed for car dealerships to manage, maintain, and add to dealer stock.
-                    </p>
-                    <p style={styles.technologyList}>
-                        Technologies Used: C#, .NET Core, JavaScript, Svelte, JWT, ASP.NET, SQLite, Dapper, and Fast-Endpoints
-                    </p>
-                </div>
-            </a>
-            <a
-                href="https://github.com/KashyapChilivoju/RegisterLoginPHP"
-                style={styles.projectItem}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img 
-                    src="/RegisterLoginPHP.png" 
-                    alt="Register & Login PHP" 
-                    style={styles.projectImage} 
-                />
-                <div style={styles.projectDetails}>
-                    <h2>Register & Login PHP</h2>
-                    <p style={styles.projectDescription}>
-                        A secure user authentication system for web applications, featuring registration, login, and password management functionalities.
-                    </p>
-                    <p style={styles.technologyList}>
-                        Technologies Used: PHP, HTML, CSS
-                    </p>
-                </div>
-            </a>
+            {projects.map((project, index) => (
+                <a
+                    key={index}
+                    href={project.link}
+                    style={{
+                        ...styles.projectItem,
+                        ...(hoveredIndex === index ? styles.projectItemPress : {}),
+                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        style={{
+                            ...styles.projectImage,
+                            ...(hoveredIndex === index ? styles.projectImagePress : {}),
+                        }}
+                    />
+                    <div style={styles.projectDetails}>
+                        <h2>{project.title}</h2>
+                        <p style={styles.projectDescription}>{project.description}</p>
+                        <p style={styles.technologyList}>
+                            Technologies Used: {project.technologies}
+                        </p>
+                    </div>
+                </a>
+            ))}
             <p style={styles.projectDescription}>More projects coming soon!</p>
         </div>
     );
