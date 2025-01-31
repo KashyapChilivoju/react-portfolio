@@ -30,7 +30,7 @@ const styles = {
     },
     projectItem: {
         display: 'flex',
-        flexDirection: 'row', // Default: Image on Left, Text on Right
+        flexDirection: 'row',
         alignItems: 'center',
         margin: '20px 0',
         padding: '20px',
@@ -44,8 +44,13 @@ const styles = {
         transition: 'transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease',
         boxSizing: 'border-box',
     },
+    projectItemHover: {
+        transform: 'scale(1.03)',
+        boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
+        backgroundColor: '#444',
+    },
     projectItemMobile: {
-        flexDirection: 'column', // Mobile: Stack Items
+        flexDirection: 'column',
         width: '90%',
         textAlign: 'center',
     },
@@ -58,6 +63,10 @@ const styles = {
         objectFit: 'contain',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    },
+    projectImageHover: {
+        transform: 'scale(1.05)',
+        boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
     },
     projectImageMobile: {
         width: '100%',
@@ -128,7 +137,7 @@ function Projects() {
                     style={{
                         ...styles.projectItem,
                         ...(isMobile ? styles.projectItemMobile : {}),
-                        ...(hoveredIndex === index ? styles.projectItemPress : {}),
+                        ...(hoveredIndex === index && !isMobile ? styles.projectItemHover : {}),
                     }}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -147,7 +156,9 @@ function Projects() {
                                 style={{
                                     ...styles.projectImage,
                                     ...styles.projectImageMobile,
-                                    ...(hoveredIndex === index ? styles.projectImagePress : {}),
+                                    ...(hoveredIndex === index && !isMobile
+                                        ? styles.projectImageHover
+                                        : {}),
                                 }}
                             />
                             <div style={styles.projectDetailsMobile}>
@@ -165,7 +176,9 @@ function Projects() {
                                 alt={project.title}
                                 style={{
                                     ...styles.projectImage,
-                                    ...(hoveredIndex === index ? styles.projectImagePress : {}),
+                                    ...(hoveredIndex === index && !isMobile
+                                        ? styles.projectImageHover
+                                        : {}),
                                 }}
                             />
                             <div style={styles.projectDetails}>
