@@ -73,9 +73,9 @@ const styles = {
         margin: '20px 0',
     },
     keyframes: `@keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }`,
+0% { opacity: 0; }
+100% { opacity: 1; }
+}`,
 };
 
 function Experience() {
@@ -150,10 +150,10 @@ function Experience() {
                             </li>
                         </ul>
                         {/* Mobile Divider */}
-                        {!isDesktop && <div style={{...styles.divider, marginBottom:'-20px'}}></div>}
+                        {!isDesktop && <div style={{ ...styles.divider, marginBottom: '-20px' }}></div>}
                     </div>
                     {/* Vertical Divider for Desktop */}
-                    {isDesktop && <div style={{...styles.vdivider, display:'inline'}}></div>}
+                    {isDesktop && <div style={{ ...styles.vdivider, display: 'inline' }}></div>}
                     <div
                         style={{
                             ...styles.column,
@@ -162,24 +162,48 @@ function Experience() {
                     >
                         <h2 style={styles.subheading}>Education</h2>
                         <p style={styles.text}>
-                            <strong>RMIT University (2017 - 2025 Expected)</strong>
+                            <strong>RMIT University (2020 - 2024 Graduated)</strong>
                         </p>
+                        <ul>
+                            <li>
+                                <p style={styles.text}>
+                                    <b>Tertiary Education - Bachelor of Computer Science</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p style={styles.text}>
+                                    <b>Majors:</b> Advanced Computer Science & Enterprise Systems Development
+                                </p>
+                            </li>
+                        </ul>
                         <p style={styles.text}>
-                            <b>Tertiary Education - Bachelor of Software Engineering</b>
+                            <strong>RMIT University (2017 - 2019 Transferred)</strong>
                         </p>
-                        <p style={styles.text}>
-                            <b>Majors:</b> Full Stack Web/Software Development and Machine Learning
-                        </p>
+
+                        <ul>
+                            <li>
+                                <p style={styles.text}>
+                                    <b>Tertiary Education - Associate Degree in IT (Pathway)</b>
+                                </p>
+                            </li>
+                        </ul>
                         <p style={styles.text}>
                             <strong>Dandenong High School (2013 - 2016)</strong>
                         </p>
-                        <p style={styles.text}>
-                            <b>Secondary Education - VCE Year 12</b>
-                        </p>
-                        <p style={styles.text}>
-                            <b>Subjects:</b> English, Specialist Mathematics, Mathematical Methods,
-                            Physics, Chemistry
-                        </p>
+                        <ul>
+                            <li>
+                                <p style={styles.text}>
+                                    <b>Secondary Education - VCE Year 12</b>
+                                </p>
+                            </li>
+
+                            <li>
+                                <p style={styles.text}>
+                                    <b>Subjects:</b> Specialist Mathematics, Mathematical Methods,
+                                    Physics, Chemistry
+                                </p>
+                            </li>
+                        </ul>
                         <div style={styles.divider}></div>
                         <h2 style={styles.subheading}>Technical Skills</h2>
                         <p style={styles.text}>
