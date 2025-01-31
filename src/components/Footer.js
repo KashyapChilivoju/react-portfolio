@@ -22,7 +22,7 @@ function Footer() {
 
     return (
         <footer style={styles.footer}>
-            <p style={styles.text}>© 2024 Kashyap Chilivoju. All rights reserved.</p>
+            <p style={styles.text}>© 2025 Kashyap Chilivoju. All rights reserved.</p>
             <p style={styles.text}>Made with HTML, CSS, JavaScript.</p>
             <p style={styles.text}>Last updated: {lastUpdated}</p>
         </footer>
