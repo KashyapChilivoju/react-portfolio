@@ -34,7 +34,7 @@ function Links() {
             <a href="https://linkedin.com/in/kashyap-chilivoju-20414b48" style={styles.link}
                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}><FontAwesomeIcon icon={faLinkedin} /></a>
-            <a href="https://drive.google.com/uc?export=download&id=1i24AmnIUiKv3RPIGV7D3X2w9ThGwPzde" style={styles.link}
+            <a href="https://drive.google.com/uc?export=download&id=1xkWuwCs1nsBR0KMk9wI65ouQpQ545kwA" style={styles.link}
                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}><FontAwesomeIcon icon={faFileDownload} /></a>
             <a href="https://stackoverflow.com/users/25541752/kashyap-chilivoju" style={styles.link}
