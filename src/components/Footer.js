@@ -18,7 +18,7 @@ const styles = {
 
 function Footer() {
     const date = new Date();
-    const lastUpdated = '31/01/2025';
+    const lastUpdated = '05/02/2025';
 
     return (
         <footer style={styles.footer}>

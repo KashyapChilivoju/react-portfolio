@@ -17,7 +17,7 @@ const styles = {
         background: '#ffffff',
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
         borderRadius: '15px',
-        maxWidth: '85%',
+        maxWidth: '75%',
         width: '100%',
         height: 'fit-content',
         minHeight: '520px',
@@ -57,7 +57,7 @@ const styles = {
         color: '#555',
         lineHeight: '1.8',
         wordWrap: 'break-word',
-        textAlign: 'center',
+        
     },
     paragraph: {
         marginBottom: '15px',
@@ -108,10 +108,10 @@ function About() {
     });
 
     const titleText = 'Kashyap Chilivoju';
-    const subtitleText = 'Software Engineering Student | Full-Stack Developer';
+    const subtitleText = 'Computer Science Graduate & Full-Stack Developer';
     const descriptionParagraphs = [
-        "I'm a software engineer with a passion for making cool, creative, interactive, and functional web applications. I enjoy solving problems, tackling challenges, working in a collaborative environment, and exploring new technologies to develop effective solutions.",
-        "This website is themed 'The Programmer's Life'. The Welcome page, with its breathing/heart-beating effect, symbolizes the countless hours spent staring at a computer screen, reflecting and thinking. The About page features a typewriter/coding effect to represent the focused moments of coding and debugging. The project mouse-over effect the feel of the keystroke. Finally, the starry mouse effect signifies the 'magic' that happens when the code successfully compiles after hours of effort.",
+        "I'm a software engineer dedicated to developing innovative applications. I excel in problem-solving, teamwork, and adopting new technologies.",
+        "This website, themed 'The Programmer's Life,' encapsulates the essence of coding. The Welcome page's heart-beating effect symbolizes long hours at the screen. The About page's typewriter effect highlights intense coding sessions. Lastly, the starry mouse effect celebrates the magical moment of successful code compilation.",
     ];
 
     const renderedTitle = useTypewriterEffect(titleText, inView, 80);

@@ -43,10 +43,11 @@ const styles = {
         color: 'white',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease',
         boxSizing: 'border-box',
+        transform: 'scale(1)',
     },
     projectItemHover: {
-        transform: 'scale(1.03)',
-        boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
+        transform: 'scale(0.97)',
+        boxShadow: '0 6px 12px rgba(0,0,0,0.4)',
         backgroundColor: '#444',
     },
     projectItemMobile: {
@@ -65,7 +66,7 @@ const styles = {
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
     },
     projectImageHover: {
-        transform: 'scale(1.05)',
+        transform: 'scale(0.97)',
         boxShadow: '0 6px 12px rgba(0,0,0,0.3)',
     },
     projectImageMobile: {
