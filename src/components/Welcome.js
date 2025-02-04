@@ -5,12 +5,14 @@ const styles = {
     container: {
         height: '100vh',
         width: '100vw',
+        maxWidth: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         overflow: 'hidden',
         position: 'relative',
         transition: 'opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 2s cubic-bezier(0.4, 0, 0.2, 1)',
+        boxSizing: 'border-box',
     },
     gradientBackground: {
         position: 'absolute',
